@@ -1,0 +1,100 @@
+.Ads_header {
+    padding: 24px;
+    font-family: 'robot, sans-serif';
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.Header_taitle {
+display: inline-block;
+font-size: 32px;
+font-weight: 700;
+}
+
+.Header_button {
+    display: inline-block;
+    float: right;
+    font-size: 36px;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 7px;
+    background-color: black;
+    color: white;
+
+}
+
+.Ads_content {
+    padding: 24px;
+}
+
+.Content_box {
+    display: inline-block;
+}
+
+.box_info {}
+
+.box_name {}
+
+.box_phone {}
+
+.Modal__window {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* display: none; */
+}
+
+.Modal__mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.Modal__form {
+    padding: 24px;
+    border-radius: 24px;
+    background-color: white;
+    display: inline-block;
+}
+
+.Form__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.Form__content {}
+
+.Content_field {
+    font-family: 'Roboto', sans-serif;
+}
+
+.Content__field label {
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.Content__field input {
+    display: block;
+    width: 227px;
+    padding: 12px 16px;
+}
+
+.Content__field button {
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    padding: 12px 0;
+    width: 100;
+}
