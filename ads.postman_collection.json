@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "94df5373-eca0-4c57-920d-32d2fa98f364",
+		"name": "ads",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "text",
+							"value": "Текст объявления",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Имя",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "+79824873795",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api.php?add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "add",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
