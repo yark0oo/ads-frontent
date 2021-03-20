@@ -1,33 +1,29 @@
 <?php
 
-$pdo =
- new PDO('mysql:host=localhost;dbname=ads_db','root','root');
+$pdo = new PDO(
+   'mysql:host=localhost;dbname=ads_db',
+   'root','root');
 
- if (isset($_GET['add'])) {
+if (isset($_GET['add'])) {
 
-    $text = $_POST['text'];
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
+   $text = $_POST['text'];
+   $name = $_POST['name'];
+   $phone = $_POST['phone'];
+   
+   $query = $pdo -> prepare('INSERT INTO ads 
+   (text, name, phone) 
+   value (:text, :name, :phone)');
+   $query -> bindValue(':text', $text);
+   $query -> bindValue(':name', $name);
+   $query -> bindValue(':phone', $phone);
+   $query -> execute();
+}
 
-    $p = $pdo -> prepare(
-        "INSERT INTO ads
-        (text, name, phone) 
-        value (:text, :name, :phone)"
-    );
+else if (isset($_GET['all'])) {
 
-    $p -> bindValue(':text', $text);
-    $p -> bindValue(':name', $name);
-    $p -> bindValue(':phone', $phone);
-    $p -> execute();
- }
+   $query = $pdo -> query("SELECT * FROM ads");
+   $query = $query -> fetchAll(PDO::FETCH_ASSOC);
+   header("Content-type: application/json; charset=utf-8");
 
- else if (isset($_GET['all'])) {
-
-   $q = $pdo -> query("SELECT * FROM ads");
-
-    $r = $q -> fetchAll(PDO::FETCH_ASSOC);
-
-    header('Content-type: application/json');
-
-    echo json_encode($r);
- }
+   echo json_encode($query);
+}
